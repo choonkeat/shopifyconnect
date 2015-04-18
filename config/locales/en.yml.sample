@@ -1,0 +1,54 @@
+en:
+  shopifyconnect:
+    new_session_path: /sessions/new
+
+    recurring_charge:
+      test: true
+      name: "Shopifyconnect"
+      price: "0.99"
+      trial_days: 7
+
+    notices:
+      authorize_fail: "Authorization failed"
+      authorize_oauth_error: "Invalid authorization"
+      charges_updated: "%{status} monthly subscription" # e.g. Declined monthly subscription
+
+    install:
+      hostname: "example.com"
+      script_urls:
+        - "http://example.com/shopifyconnect/sample/js"
+      topic_urls:
+        "orders/create":
+        "orders/delete":
+        "orders/updated":
+        "orders/paid":
+        "orders/cancelled":
+        "orders/fulfilled":
+        "orders/partially_fulfilled":
+        "order_transactions/create":
+        "carts/create": "http://example.com/shopifyconnect/sample/webhook"
+        "carts/update": "http://example.com/shopifyconnect/sample/webhook"
+        "checkouts/create":
+        "checkouts/update":
+        "checkouts/delete":
+        "refunds/create":
+        "products/create":
+        "products/update":
+        "products/delete":
+        "collections/create":
+        "collections/update":
+        "collections/delete":
+        "customer_groups/create":
+        "customer_groups/update":
+        "customer_groups/delete":
+        "customers/create":
+        "customers/enable":
+        "customers/disable":
+        "customers/update":
+        "customers/delete":
+        "fulfillments/create":
+        "fulfillments/update":
+        "shop/update":
+        "disputes/create":
+        "disputes/update":
+        "app/uninstalled": "http://local.choonkeat.com/shopifyconnect/sample/webhook"

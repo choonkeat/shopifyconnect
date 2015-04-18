@@ -1,0 +1,22 @@
+= form_for current_shop, url: shop_path, class: "form form-horizontal" do |f|
+
+  .form-group
+    = f.label :store_address, "Your store address", class: "form-label"
+    .input-group
+      = f.text_field :store_address, class: "form-control", required: true, autofocus: f.object.new_record?
+      .input-group-addon= '.myshopify.com'
+
+  / add more fields here
+
+  .form-group
+    => f.button submit_label, class: "btn-primary btn", data: { disable_with: t('helpers.disable_with') }
+    ' or
+    = link_to 'Cancel', '/'
+
+  - if f.object.persisted?
+    hr
+    .pull-left
+      = link_to 'Delete', shop_path, data: { confirm: 'Are you sure?'}, method: :delete, class: "text-danger"
+    .pull-right
+      = link_to 'Shopify Dashboard', "https://#{f.object.domain_name}/admin", target: "_blank"
+
